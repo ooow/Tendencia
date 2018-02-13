@@ -1,2 +1,3 @@
-# tendencia
-some description
+# Tendencia
+
+Tendencia is a platform for tracking and controlling your money conversion.
