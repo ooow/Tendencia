@@ -5,32 +5,38 @@ import {AppComponent} from './app.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {RouterModule, Routes} from '@angular/router';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {HomePageComponent} from './home-page/home-page.component';
 
-const routes = [
+const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'}
+  {path: 'home', component: HomePageComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    HomePageComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot(routes),
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

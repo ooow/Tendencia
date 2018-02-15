@@ -1,0 +1,30 @@
+<div class="container">
+  <mat-toolbar class="mat-toolbar">
+    <mat-toolbar-row>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="material-icons">menu</i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="menu-item">
+          <i class="material-icons">euro_symbol</i>
+          <span>Course</span>
+        </button>
+        <button mat-menu-item class="menu-item">
+          <i class="material-icons">equalizer</i>
+          <span>Graphics</span>
+        </button>
+        <button mat-menu-item class="menu-item" (click)="logout()">
+          <i class="material-icons">power_settings_new</i>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+
+      <span class="project-title">Tendencia</span>
+      <span class="example-spacer"></span>
+      <i class="material-icons icon">favorite</i>
+      <i class="material-icons icon">delete</i>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="body"></div>
+</div>
+
