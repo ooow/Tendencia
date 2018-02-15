@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  charts = 'Charts';
 
   constructor(private router: Router) {
   }

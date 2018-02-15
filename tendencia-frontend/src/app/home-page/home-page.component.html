@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-toolbar class="mat-toolbar">
+  <mat-toolbar class="mat-toolbar-home">
     <mat-toolbar-row>
       <button mat-icon-button [matMenuTriggerFor]="menu">
         <i class="material-icons">menu</i>
@@ -25,6 +25,16 @@
       <i class="material-icons icon">delete</i>
     </mat-toolbar-row>
   </mat-toolbar>
-  <div class="body"></div>
+  <div class="chart-title-container">
+    <div class="chart-title">Chart One</div>
+  </div>
+  <div class="content-container">
+    <div class="content">
+      <div class="nav-menu">
+        <app-nav-menu-item [title]="charts"></app-nav-menu-item>
+        <button mat-button class="history-button">History</button>
+      </div>
+    </div>
+  </div>
 </div>
 
