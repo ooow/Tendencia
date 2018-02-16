@@ -4,19 +4,21 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatMenuModule,
+  MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatMenuModule, MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
 import {HomePageComponent} from './home-page/home-page.component';
 import {NavMenuItemComponent} from './nav-menu-item/nav-menu-item.component';
+import {ChartsModule} from 'ng2-charts';
+import {ChartComponent} from './chart/chart.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
   {path: 'home', component: HomePageComponent},
-  {path: 'nav', component: NavMenuItemComponent},
+  {path: 'chart', component: ChartComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 
@@ -26,7 +28,8 @@ const routes: Routes = [
     AppComponent,
     LoginPageComponent,
     HomePageComponent,
-    NavMenuItemComponent
+    NavMenuItemComponent,
+    ChartComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -39,7 +42,10 @@ const routes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

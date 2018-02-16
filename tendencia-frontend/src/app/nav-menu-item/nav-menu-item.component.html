@@ -1,0 +1,13 @@
+<nav>
+  <button mat-button class="items-list-button" (click)="onClick()">
+    {{title}}
+    <i class="material-icons arrow">{{arrow}}</i>
+  </button>
+  <ul [ngClass]="{'hidden': isVisible}">
+    <li *ngFor="let item of items" class="items">
+      <button mat-button class="item" (click)="selectItem(item)">
+        {{item}}
+      </button>
+    </li>
+  </ul>
+</nav>

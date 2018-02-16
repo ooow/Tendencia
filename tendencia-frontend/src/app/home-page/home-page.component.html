@@ -34,6 +34,20 @@
         <app-nav-menu-item [title]="charts"></app-nav-menu-item>
         <button mat-button class="history-button">History</button>
       </div>
+      <div class="chart-container">
+        <div class="course-layout">
+          <mat-form-field>
+            <mat-select placeholder="Currency" [formControl]="animalControl">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let type of types" [value]="type">
+                {{type.abbreviation}}
+              </mat-option>
+            </mat-select>
+            <mat-hint>{{animalControl.value?.value}}</mat-hint>
+          </mat-form-field>
+        </div>
+        <app-chart></app-chart>
+      </div>
     </div>
   </div>
 </div>

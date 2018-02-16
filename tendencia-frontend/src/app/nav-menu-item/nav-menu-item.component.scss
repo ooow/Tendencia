@@ -1,0 +1,43 @@
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+.items-list-button {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.items {
+  width: 97%;
+
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.15);
+
+  :hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 3);
+    transition: .1s all;
+    color: #e91e63;
+  }
+}
+
+.item {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  font-weight: 200;
+  color: #ffffff;
+}
+
+.material-icons.arrow {
+  margin-left: 145px;
+}
