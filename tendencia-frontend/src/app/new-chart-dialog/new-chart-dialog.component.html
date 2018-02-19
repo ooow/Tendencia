@@ -1,0 +1,30 @@
+<p>Create new chart</p>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Title">
+</mat-form-field>
+<mat-form-field>
+  <mat-select placeholder="Value" [formControl]="animalControl">
+    <mat-option>--</mat-option>
+    <mat-option *ngFor="let type of types" [value]="type">
+      {{type.abbreviation}}
+    </mat-option>
+  </mat-select>
+  <mat-hint>{{animalControl.value?.value}}</mat-hint>
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="From">
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="To">
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Exchange" value="0.01244">
+</mat-form-field>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<button mat-menu-item class="menu-item" (click)="generateNewChart()">
+  <span>Save</span>
+</button>

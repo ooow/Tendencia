@@ -1,16 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, Inject} from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl} from '@angular/forms';
-import {MatDialog} from '@angular/material';
-import {NewChartDialogComponent} from '../new-chart-dialog/new-chart-dialog.component';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-new-chart-dialog',
+  templateUrl: './new-chart-dialog.component.html',
+  styleUrls: ['./new-chart-dialog.component.scss']
 })
-export class HomePageComponent implements OnInit {
-  charts = 'Charts';
+export class NewChartDialogComponent {
   animalControl = new FormControl('');
   types = [
     {abbreviation: 'EUR', country: 'European Union', title: 'Euro', value: '57.2'},
@@ -23,20 +20,10 @@ export class HomePageComponent implements OnInit {
     {abbreviation: 'UAH', country: 'Ukraine', title: 'Hryvnia', value: '2.01'}
   ];
 
-  constructor(private router: Router, public dialog: MatDialog) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
-  ngOnInit() {
-  }
-
-  createNewChart() {
-    this.dialog.open(NewChartDialogComponent, {
-      height: '550px',
-      width: '300px',
-    });
-  }
-
-  logout() {
-    this.router.navigateByUrl('/');
+  generateNewChart() {
+    console.log('new chart generated :)');
   }
 }
