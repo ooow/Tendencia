@@ -2,15 +2,18 @@
 <mat-form-field class="example-full-width">
   <input matInput placeholder="Title">
 </mat-form-field>
-<mat-form-field>
-  <mat-select placeholder="Value" [formControl]="animalControl">
-    <mat-option>--</mat-option>
-    <mat-option *ngFor="let type of types" [value]="type">
-      {{type.abbreviation}}
-    </mat-option>
-  </mat-select>
-  <mat-hint>{{animalControl.value?.value}}</mat-hint>
-</mat-form-field>
+<div class="valueContainer">
+  <mat-form-field>
+    <mat-select placeholder="Value" [formControl]="animalControl">
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let type of types" [value]="type">
+        {{type.abbreviation}}
+      </mat-option>
+    </mat-select>
+    <mat-hint>{{animalControl.value?.value}}</mat-hint>
+  </mat-form-field>
+  <i class="material-icons icon" (click)="createNewValue()">add_circle_outline</i>
+</div>
 <mat-form-field class="example-full-width">
   <input matInput placeholder="From">
 </mat-form-field>

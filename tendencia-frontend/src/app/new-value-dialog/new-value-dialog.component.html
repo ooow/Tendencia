@@ -1,0 +1,15 @@
+<p>Create new value</p>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Title">
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Amount">
+</mat-form-field>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<button mat-menu-item class="menu-item" (click)="generateNewValue()">
+  <span>Save</span>
+</button>

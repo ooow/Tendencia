@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialog} from '@angular/material';
 import {FormControl} from '@angular/forms';
+import {NewValueDialogComponent} from '../new-value-dialog/new-value-dialog.component';
 
 @Component({
   selector: 'app-new-chart-dialog',
@@ -20,10 +21,17 @@ export class NewChartDialogComponent {
     {abbreviation: 'UAH', country: 'Ukraine', title: 'Hryvnia', value: '2.01'}
   ];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialog) {
   }
 
   generateNewChart() {
     console.log('new chart generated :)');
+  }
+
+  createNewValue() {
+    this.dialog.open(NewValueDialogComponent, {
+      height: '360px',
+      width: '260px',
+    });
   }
 }
